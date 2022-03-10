@@ -6,6 +6,19 @@ namespace ConditionalsLoopMethodsDemo
     {
         static void Main()
         {
+            Console.Write("Enter a number: ");
+            int startingNum = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter a target number: ");
+            int targetNum = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter a range: ");
+            int range = int.Parse(Console.ReadLine());
+
+           
+            
+            Console.WriteLine($"Given a starting num of {startingNum} and a target number of {targetNum}," +
+                                $"it's {IsWithinRange(startingNum, targetNum, range)}");
             
         }
 
