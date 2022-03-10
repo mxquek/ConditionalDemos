@@ -6,24 +6,23 @@ namespace ConditionalsLoopMethodsDemo
     {
         static void Main()
         {
-            Console.Write("Enter a number: ");
-            int startingNum = int.Parse(Console.ReadLine());
+            Console.Write("Do we have power? [y/n]");
+            bool hasPower = Console.ReadLine().ToLower() == "y";
 
-            Console.Write("Enter a target number: ");
-            int targetNum = int.Parse(Console.ReadLine());
+            Console.Write("Do we have paper? [y/n]");
+            bool hasPaper = Console.ReadLine().ToLower() == "y";
 
-            Console.Write("Enter a range: ");
-            int range = int.Parse(Console.ReadLine());
+            Console.Write("What is the ink level?");
+            int inkLevel = int.Parse(Console.ReadLine());
 
-            string output = IsWithinRange(startingNum, targetNum, range) ? "It is within range." : "It is not within range.";
-
-            Console.WriteLine($"Given a starting num of {startingNum} and a target number of {targetNum}, {output}");
+            PrintDoc(hasPower, hasPaper, inkLevel);
         }
 
         //access modifier - static - return type - name (parms in here)
-        private static bool IsWithinRange(int num, int target, int range)
+
+        private static void PrintDoc(bool hasPower, bool hasPaper, int inkLevel)
         {
-            return (Math.Abs(num - target) < range);
+            Console.WriteLine(hasPaper && hasPower && inkLevel >= 10 ? "Printing" : "Unable to print");
         }
     }
 }
