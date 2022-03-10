@@ -2,11 +2,17 @@
 
 namespace ConditionalsLoopMethodsDemo
 {
-    class Program
+    class MainClass
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            
+        }
+
+        //access modifier - static - return type - name (parms in here)
+        private static bool IsWithinRange(int num, int target, int range)
+        {
+            return ((num - target) < range);
         }
     }
 }
